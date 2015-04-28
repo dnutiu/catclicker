@@ -1,0 +1,10 @@
+p, h2 {
+	display: inline;
+}
+
+
+li:hover {
+	background-color: #e2e2e2;
+	font-weight: bold;
+	color: blue;
+}
