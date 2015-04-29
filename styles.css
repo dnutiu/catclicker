@@ -1,7 +1,9 @@
 p, h2 {
 	display: inline;
 }
-
+#display, #admin-display {
+	float: left;
+}
 
 li:hover {
 	background-color: #e2e2e2;
