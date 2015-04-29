@@ -40,6 +40,15 @@ var controller = {
 	getCats: function() {
 		return model.cats;
 	},
+	adminGetData: function () {
+		console.log('test');
+		//get data
+		//call this.adminChangeData();
+	},
+	adminChangeData: function(name, image, clicks) {
+		//update modal
+		//set current cat?
+	},
 	bindClicks: function() {
 		$('#cat-image').click(function() {
 			model.currentCat.catCounter++;
@@ -54,6 +63,12 @@ var controller = {
 
 		$('#toggle-admin').click(function () {
 			$('#admin-panel').toggle('display');	
+		});
+
+		$('#a-submit-btn').click(function(e) {
+			e.preventDefault();
+			controller.adminChangeData();
+			view.drawDisplayArea();
 		});
 	}
 };
