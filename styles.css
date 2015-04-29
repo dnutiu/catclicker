@@ -4,9 +4,24 @@ p, h2 {
 #display, #admin-display {
 	float: left;
 }
-
-li:hover {
+.admin_form li {
+	padding-bottom: 10px;
+	list-style: none;
+}
+#cat-list {
+	margin-top: 66px;
+}
+#cat-list li {
+	border: 1px dotted black;
+	display: inline;
+	margin-right: 6px;
+	padding: 48px;
+}
+#cat-list ul {
+	margin-bottom: 50px;
+}
+#cat-list li:hover {
 	background-color: #e2e2e2;
-	font-weight: bold;
+	cursor: pointer;
 	color: blue;
 }
