@@ -43,8 +43,10 @@ var controller = {
 	adminGetData: function () {
 		console.log('test');
 		//get data
-		//clear form
-		//hide form
+		
+		
+		$('.admin_form').trigger("reset");
+		// $('#admin-panel').toggle('display');
 		//call this.adminChangeData();
 	},
 	adminChangeData: function(name, image, clicks) {
