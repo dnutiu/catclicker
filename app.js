@@ -50,6 +50,10 @@ var controller = {
 			model.currentCat = model.cats[index];
 			view.drawDisplayArea();
 		});
+
+		$('#toggle-admin').click(function () {
+			$('#admin-panel').toggle('display');	
+		});
 	}
 };
 var view = {

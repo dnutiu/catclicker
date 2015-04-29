@@ -4,6 +4,9 @@ p, h2 {
 #display, #admin-display {
 	float: left;
 }
+#admin-panel {
+	display: none;
+}
 .admin_form li {
 	padding-bottom: 10px;
 	list-style: none;
