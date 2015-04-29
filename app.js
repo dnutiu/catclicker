@@ -43,6 +43,8 @@ var controller = {
 	adminGetData: function () {
 		console.log('test');
 		//get data
+		//clear form
+		//hide form
 		//call this.adminChangeData();
 	},
 	adminChangeData: function(name, image, clicks) {
@@ -67,7 +69,7 @@ var controller = {
 
 		$('#a-submit-btn').click(function(e) {
 			e.preventDefault();
-			controller.adminChangeData();
+			controller.adminGetData();
 			view.drawDisplayArea();
 		});
 	}
