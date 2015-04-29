@@ -13,6 +13,34 @@
 			<p>Clicks: <span id="cat-counter"></span></p>
 			<div><img src id="cat-image"></div>
 		</section>
+		<section id="admin-display">
+			<button id="toggle-admin">Admin</button>
+			<div id="admin-panel">
+				<form class="admin_form" action="" method="post" name="admin_form">
+					<ul>
+					    <li>
+					         <h2>Admin Panel</h2>
+					    </li>
+					    <li>
+					        <label for="a-cat-name">Name:</label>
+					        <input type="text" id="a-cat-name" name="name" />
+					    </li>
+					    <li>    
+					        <label for="a-cat-image">Image:</label>
+					        <input type="text" id="a-cat-image" name="name" />
+					    </li>
+					    <li>    
+					        <label for="a-cat-clicks">Clicks:</label>
+					        <input type="text" id="a-cat-clicks" name="name" />
+					    </li>
+					    <li>
+					    	<button id="a-cancel-btn" type="reset">Cancel</button>
+    						<button id="a-submit-btn" type="submit">Submit</button>
+						</li>
+					</ul>
+				</form>
+			</div>
+		</section>
 	</main>
 </body>
 </html>

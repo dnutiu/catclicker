@@ -28,6 +28,7 @@ var model = {
 		},
 	]
 };
+
 var controller = {
 	init: function() {
 		model.currentCat = model.cats[0];
@@ -56,6 +57,7 @@ var controller = {
 		});
 	}
 };
+
 var view = {
 	init: function() {
 		this.drawList();
@@ -87,5 +89,4 @@ var view = {
 		$('#cat-counter').append(cat.catCounter)
 	}
 };
-
 controller.init();
