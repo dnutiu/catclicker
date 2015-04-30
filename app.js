@@ -48,17 +48,11 @@ var controller = {
 	getCatIndex: function() {
 		return model.currentCatIndex;
 	},
-	adminGetData: function () {
-		//get data
+	adminChangeData: function() {
+		var index = this.getCatIndex();
 		var name = $('#a-cat-name').val();
 		var image = $('#a-cat-image').val();
 		var clicks = $('#a-cat-clicks').val();
-		$('.admin_form').trigger("reset");
-		$('#admin-panel').toggle('display');
-		this.adminChangeData(name, image, clicks);
-	},
-	adminChangeData: function(name, image, clicks) {
-		var index = this.getCatIndex();
 
 		if (image == "") {
 			image = model.currentCat.catImg;
@@ -81,25 +75,8 @@ var controller = {
 
 		view.drawList();
 		view.drawDisplayArea();
-	},
-	bindClicks: function() {
-
-		$('#toggle-admin').click(function () {
-			$('#admin-panel').toggle('display');	
-		});
-
-		$('#a-submit-btn').click(function(e) {
-			e.preventDefault();
-
-			var index = $('#cat-list li').attr('id');
-			controller.adminGetData();
-			view.drawDisplayArea();
-		});
-
-		$('#cat-image').click(function() {
-			model.currentCat.catCounter++;
-			view.updateCounter();
-		});
+		
+		$('#admin-panel').toggle('display');
 	}
 };
 
@@ -107,7 +84,13 @@ var view = {
 	init: function() {
 		this.drawList();
 		this.drawDisplayArea();
-		controller.bindClicks();
+		this.drawAdminArea();
+		this.updateAdminArea();
+
+		$('#cat-image').click(function() {
+			model.currentCat.catCounter++;
+			view.updateCounter();
+		});
 	},
 	drawList: function() {
 		var cats = controller.getCats();
@@ -124,6 +107,7 @@ var view = {
 			var index = $(this).attr('id');
 			controller.setCurrentCat(cats[index], index);
 			view.drawDisplayArea();
+			view.updateAdminArea();
 		});
 	},
 	drawDisplayArea: function() {
@@ -136,6 +120,26 @@ var view = {
 		$('#cat-counter').append(cat.catCounter)
 		$('#cat-image').attr('src', cat.catImg);
 
+	},
+	drawAdminArea: function() {
+		$('#toggle-admin').click(function () {
+			$('#admin-panel').toggle('display');	
+		});
+
+		$('#a-submit-btn').click(function(e) {
+			e.preventDefault();
+
+			var index = $('#cat-list li').attr('id');
+			controller.adminChangeData();
+			view.drawDisplayArea();
+		});
+	},
+	updateAdminArea: function() {
+		var cat = controller.getCurrentCat();
+
+		var name = $('#a-cat-name').val(cat.catName);
+		var image = $('#a-cat-image').val(cat.catImg);
+		var clicks = $('#a-cat-clicks').val(cat.catCounter);
 	},
 	updateCounter: function() {
 		var cat = controller.getCurrentCat();
