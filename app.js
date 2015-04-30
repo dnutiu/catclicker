@@ -152,7 +152,7 @@ var view = {
 	updateCounter: function() {
 		var cat = controller.getCurrentCat();
 		var clicks = $('#a-cat-clicks').val(cat.clicks);
-		
+
 		$('#cat-counter').html(' ');
 		$('#cat-counter').append(cat.clicks)
 	}
